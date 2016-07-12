@@ -15,7 +15,7 @@ class Tag(models.Model):
         (OK, '数据可用'),
         (DELETED, '数据删除'),
     )
-    name = CharField(max_length=200)
+    name = models.CharField(max_length=200)
     related_tags = models.ManyToManyField("self");
     status = models.CharField(max_length=200, choices = STATUS_CHOICE, default=INITAIL)
 

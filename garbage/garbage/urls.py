@@ -16,10 +16,9 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-import keyword_img.views
+from keyword_img import views
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^image/detail/(?P<image_code>\w+).html', views.image_detail, name="image_detail"),
-
+    url(r'^image/detail/(\w+).html', views.image_detail, name="image_detail"),
 ]
