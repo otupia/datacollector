@@ -31,8 +31,13 @@ def getCrawlUrl():
     test_words = ['装修']
     print "-" * 50
     for w in test_words :
-        print "http://cn.bing.com/images/search?q=%s" % w
-        yield "http://cn.bing.com/images/search?q=%s" % w
+        print "http://cn.bing.com/images/async?q=%s&async=content&count=35" %w
+        print "http://cn.bing.com/images/async?q=%s&async=content&count=35&first=35" %w
+        print "http://cn.bing.com/images/async?q=%s&async=content&count=70&first=35" %w
+        yield "http://cn.bing.com/images/async?q=%s&async=content&count=35" %w
+        yield "http://cn.bing.com/images/async?q=%s&async=content&count=35&first=35" %w
+        yield "http://cn.bing.com/images/async?q=%s&async=content&count=70&first=35" %w
+
 
 class dazhongSpider(scrapy.Spider):
     name = "bingimg"
